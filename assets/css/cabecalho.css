@@ -1,0 +1,17 @@
+.cabecalho {
+  background: var(--primary-green);
+  display: flex;
+  align-items: center;
+  padding: 0 10rem;
+  width: 100%;
+  height: 12vh;
+  box-sizing: border-box;
+}
+.logo{
+    width: 5rem;
+    padding: 1rem;
+}
+.title{
+    color: var(--primary-blue);
+    margin-left: 1rem;
+}

@@ -1,0 +1,31 @@
+footer {
+  background: var(--primary-black);
+  box-sizing: border-box;
+  justify-self: flex-end;
+  padding: 0 10rem;
+  width: 100%;
+  height: 12vh;
+  color: var(--primary-white);
+  display: flex;
+  align-items: center;
+}
+.social-icons {
+  width: 2rem;
+  margin: 1rem;
+}
+.footer-infos {
+  font-size: 12px;
+}
+.footer-author {
+  font-size: 12px;
+  flex-grow: 1;
+  text-align: center;
+}
+.footer-media {
+  text-align: center;
+  flex-grow: 1;
+}
+.media-icons {
+  display: flex;
+  justify-content: space-evenly;
+}
