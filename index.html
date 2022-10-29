@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/cabecalho.css">
     <link rel="stylesheet" href="./assets/css/rodape.css">
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
 </head>
 
 <body>
@@ -16,9 +17,34 @@
         <img class="logo" src="./assets/img/heart-_1_.svg" alt="Logo Life Bank">
         <h1 class="title">Life Bank</h1>
     </header>
-    <main class="principal">
+
+    <main class="main">
+        <section class="cadastro-screen">
+
+            <h2 class="cadastro-title">Crie sua conta</h2>
+            <p class="cadastro-description">Preencha seus dados para começar o processo de abertura de conta.</p>
+
+            <form class="cadastro-form">
+                <label class="cadastro-label" for="input-name">Nome:</label>
+                <input class="cadastro-inputs" type="text" name="name" id="input-name">
+                <label class="cadastro-label" for="">CPF:</label>
+                <input class="cadastro-inputs" type="text" name="cpf" id="input-cpf">
+                <label class="cadastro-label" for="">Celular:</label>
+                <input class="cadastro-inputs" type="text" name="cel" id="input-cel">
+                <label class="cadastro-label" for="input-password">Senha:</label>
+                <input class="cadastro-inputs" type="password" name="password" id="input-password">
+                <label class="cadastro-label" for="input-password-confirm">Confirme sua senha:</label>
+                <input class="cadastro-inputs" type="password" name="password-confirm" id="input-password-confirm">
+                <div class="cadastro-buttons-div">
+                    <button type="submit" class="cadastro-buttons" id="submit-button">Enviar</button>
+                    <button type="reset" class="cadastro-buttons" id="clear-button">Limpar</button>
+                </div>
+            </form>
+        </section>
     </main>
+
     <footer class="footer">
+
         <div class="footer-infos">
             <p>
                 Life Bank Holding © 2022. <br>
@@ -26,17 +52,21 @@
                 Rua dos Bancários, 000 - Industrial , São Paulo - SP, 00000-XXX
             </p>
         </div>
+
         <div class="footer-author">
             <p>Criado por Adalto Gonçalves</p>
-            <img class="social-icons" src="./assets/img/github_1.svg" alt="logo github">
-            <img class="social-icons" src="./assets/img/linkedin_1.svg" alt="logo linkedin">
+            <a href="https://github.com/AdaltoRG" target="_blank" rel="noopener noreferrer"><img class="social-icons"
+                    src="./assets/img/github_1.svg" alt="logo github"></a>
+            <a href="https://www.linkedin.com/in/goncalvesadalto/" target="_blank" rel="noopener noreferrer"> <img
+                    class="social-icons" src="./assets/img/linkedin_1.svg" alt="logo linkedin"></a>
         </div>
+
         <div class="footer-media">
-            <h3>Acompanhe</h3>
+            <h3>Acompanhe:</h3>
             <div class="media-icons">
-                <img class="social-icons" src="./assets/img/facebook.svg" alt="logo facebook">
-                <img class="social-icons" src="./assets/img/twitter.svg" alt="logo twitter">
-                <img class="social-icons" src="./assets/img/instagram_1.svg" alt=" logo instagram">
+                <a href="#"><img class="social-icons" src="./assets/img/facebook.svg" alt="logo facebook"></a>
+                <a href="#"><img class="social-icons" src="./assets/img/twitter.svg" alt="logo twitter"></a>
+                <a href="#"><img class="social-icons" src="./assets/img/instagram_1.svg" alt=" logo instagram"></a>
             </div>
         </div>
     </footer>
