@@ -1,0 +1,24 @@
+.operacoes-screen {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+.op-selection{
+  display: flex;
+  justify-content: space-evenly;
+}
+.op-options{
+  cursor: pointer;
+}
+.formOp {
+  display: flex;
+  flex-direction: column;
+}
+#clear-op-button {
+  background: var(--primary-blue);
+  color: var(--primary-white);
+}
+#finalizar-button {
+  background: var(--primary-green);
+  color: var(--primary-black);
+}

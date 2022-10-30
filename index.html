@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/cabecalho.css">
     <link rel="stylesheet" href="./assets/css/rodape.css">
     <link rel="stylesheet" href="./assets/css/cadastro.css">
+    <link rel="stylesheet" href="./assets/css/operacao.css">
 </head>
 
 <body>
@@ -19,31 +20,52 @@
     </header>
 
     <main class="main">
-        <section class="cadastro-screen">
+        <section class="cadastro-screen" style="display: none">
 
-            <h2 class="cadastro-title">Crie sua conta</h2>
+            <h2 class="form-title">Crie sua conta</h2>
             <p class="cadastro-description">Preencha seus dados para começar o processo de abertura de conta.</p>
 
             <form class="cadastro-form">
-                <label class="cadastro-label" for="input-name">Nome:</label>
-                <input class="cadastro-inputs" type="text" name="name" id="input-name" required placeholder="Seu nome">
-                <label class="cadastro-label" for="">CPF:</label>
-                <input class="cadastro-inputs" type="text" name="cpf" id="input-cpf" required
-                    placeholder="123.123.123-12">
-                <label class="cadastro-label" for="">Celular:</label>
-                <input class="cadastro-inputs" type="text" name="cel" id="input-cel" required
-                    placeholder="DDD-XXX-XXX-XXX">
-                <label class="cadastro-label" for="input-password">Senha:</label>
-                <input class="cadastro-inputs" type="password" name="password" id="input-password" required
+                <label class="form-label" for="input-name">Nome:</label>
+                <input class="inputs" type="text" name="name" id="input-name" required placeholder="Seu nome">
+                <label class="form-label" for="">CPF:</label>
+                <input class="inputs" type="text" name="cpf" id="input-cpf" required placeholder="123.123.123-12">
+                <label class="form-label" for="">Celular:</label>
+                <input class="inputs" type="text" name="cel" id="input-cel" required placeholder="DDD-XXX-XXX-XXX">
+                <label class="form-label" for="input-password">Senha:</label>
+                <input class="inputs" type="password" name="password" id="input-password" required
                     placeholder="********">
-                <label class="cadastro-label" for="input-password-confirm">Confirme sua senha:</label>
-                <input class="cadastro-inputs" type="password" name="password-confirm" id="input-password-confirm"
-                    required placeholder="********">
-                <div class="cadastro-buttons-div">
-                    <button type="reset" class="cadastro-buttons" id="clear-button">Limpar</button>
-                    <button type="submit" class="cadastro-buttons" id="submit-button">Enviar</button>
+                <label class="form-label" for="input-password-confirm">Confirme sua senha:</label>
+                <input class="inputs" type="password" name="password-confirm" id="input-password-confirm" required
+                    placeholder="********">
+                <div class="form-buttons-div">
+                    <button type="reset" class="buttons" id="clear-button">Limpar</button>
+                    <button type="submit" class="buttons" id="submit-button">Enviar</button>
                 </div>
             </form>
+        </section>
+        <section class="operacoes-screen">
+            <h3 class="form-title">Realizar operação</h3>
+            <form class="formOp">
+                <div class="op-selection">
+                    <select id="operacao" required>
+                        <option value="SAQUE">Saque</option>
+                        <option value="DEPOSITO">Depósito</option>
+                        <option value="SALDO">Consulta Saldo</option>
+                    </select>
+                </div>
+                <label class="form-label" for="valorOp">Valor</label>
+                <input class="inputs" type="text" name="valor" id="valorOp" required>
+                <label class="form-label" for="contaOp">Conta</label>
+                <input class="inputs" type="number" name="conta" id="contaOp" required>
+                <label class="form-label" for="senhaOp">Senha</label>
+                <input class="inputs" type="password" name="senha" id="senhaOp" required>
+                <div class="form-buttons-div">
+                    <button class="buttons" type="reset" id="clear-op-button">Limpar</button>
+                    <button class="buttons" type="submit" id="finalizar-button">Finalizar</button>
+                </div>
+            </form>
+
         </section>
     </main>
 
@@ -75,7 +97,9 @@
         </div>
     </footer>
     <script src="./assets/js/app.js" type="module"></script>
-    <script src="./assets/js/validacao.js" type="module"></script>
+    <script
+        src="https://github.com/codermarcos/simple-mask-money/releases/download/v3.0.0/simple-mask-money.js"></script>
+    <script src="./assets/js/operacoes.js"></script>
 </body>
 
 </html>
