@@ -82,8 +82,13 @@ clearOpButton.addEventListener("click", (evento) => {
 
 operarButton.addEventListener("click", (evento) => {
   evento.preventDefault();
+  const conta = parseInt(contaOp.value);
+  const senha = senhaOp.value;
+  const valor = parseInt(valorOp.value);
 
-  switch (valorOp) {
+  const contaValida = validarConta(conta, senha);
+
+  switch (selectOperacao.value) {
     case "SALDO":
       break;
     case "SAQUE":
@@ -100,17 +105,12 @@ const obterConta = (conta) => {
   return contaCliente;
 };
 
-// //Função Saque
-// const sacar = (){
-
-// }
-
-//Função Depósito
-const depositar = (conta, valor) => {
+//Função Saque
+const sacar = (conta, valor) => {
   if (validarValor(valor)) {
     if (validarSaldo(conta, valor)) {
       let saldoAtual;
-      const contasAtualizadas = contasClientes.map((c) => {
+      const contasAtualizadas = contasCadastradas.map((c) => {
         if (c.conta === conta) {
           saldoAtual = c.saldo - valor;
           return { ...c, saldo: saldoAtual };
@@ -118,7 +118,31 @@ const depositar = (conta, valor) => {
         return c;
       });
 
-      contasClientes = contasAtualizadas;
+      contasCadastradas = contasAtualizadas;
+
+      alert(`Saque efetuado com sucesso! Saldo atual: ${saldoAtual}`);
+    } else {
+      alert("Saldo insuficiente");
+    }
+  } else {
+    alert("Valor inválido");
+  }
+};
+
+//Função Depósito
+const depositar = (conta, valor) => {
+  if (validarValor(valor)) {
+    if (validarSaldo(conta, valor)) {
+      let saldoAtual;
+      const contasAtualizadas = contasCadastradas.map((c) => {
+        if (c.conta === conta) {
+          saldoAtual = c.saldo - valor;
+          return { ...c, saldo: saldoAtual };
+        }
+        return c;
+      });
+
+      contasCadastradas = contasAtualizadas;
 
       alert(`Saque efetuado com sucesso! Saldo atual: ${saldoAtual}`);
     } else {
@@ -134,4 +158,20 @@ const consultar = (conta) => {
   const contaCliente = obterConta(conta);
 
   alert(`Saldo atual: ${contaCliente.saldo}`);
+};
+
+const validarConta = (conta, senha) => {
+  const contaCliente = obterConta(conta);
+
+  return contaCliente && contaCliente.senha === senha ? true : false;
+};
+
+const validarValor = (valor) => {
+  return !isNaN(valor) && valor > 0;
+};
+
+const validarSaldo = (conta, valor) => {
+  const contaCliente = obterConta(conta);
+
+  return contaCliente.saldo >= valor;
 };
